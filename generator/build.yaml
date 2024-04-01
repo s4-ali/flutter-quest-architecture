@@ -1,0 +1,29 @@
+builders:
+  providers_generator:
+    import: "package:generator/generator.dart"
+    builder_factories: ["providersGenerator"]
+    build_extensions: {".dart": [".providers.g.dart"]}
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]
+  codes_generator:
+    import: "package:generator/generator.dart"
+    builder_factories: ["codesGenerator"]
+    build_extensions: {".dart": [".codes.g.dart"]}
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]
+  previews_generator:
+    import: "package:generator/generator.dart"
+    builder_factories: ["previewsGenerator"]
+    build_extensions: {".dart": [".previews.g.dart"]}
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]
+  drawers_generator:
+    import: "package:generator/generator.dart"
+    builder_factories: ["drawersGenerator"]
+    build_extensions: {".dart": [".drawers.g.dart"]}
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]
